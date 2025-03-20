@@ -1,0 +1,10 @@
+{
+  "package": "pismeno.gregsconstruct.mixins",
+  "refmap": "mixins.gregsconstruct.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [],
+  "server": []
+}
