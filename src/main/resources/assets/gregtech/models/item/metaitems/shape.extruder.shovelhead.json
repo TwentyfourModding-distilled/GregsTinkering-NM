@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "gregtech:items/metaitems/shape.extruder.shovel"
+      "layer0": "gregtech:items/metaitems/shape.extruder.shovelhead"
     }
   }
   

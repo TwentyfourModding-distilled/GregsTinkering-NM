@@ -9,7 +9,7 @@ import static gregtech.api.GTValues.*;
 
 public class GTCMetaItem extends MetaItem<GTCMetaItem.GCMetaValueItem> {
 
-    public static final MetaItem<?>.MetaValueItem[] SHAPE_EXTRUDERS = new MetaItem.MetaValueItem[22];
+    public static final MetaItem<?>.MetaValueItem[] SHAPE_EXTRUDERS = new MetaItem.MetaValueItem[24];
     public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_SWORDBLADE;
     public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_BEHEADER;
     public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_ARROWHEAD;
@@ -32,6 +32,8 @@ public class GTCMetaItem extends MetaItem<GTCMetaItem.GCMetaValueItem> {
     public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_SHOVEL;
     public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_EXCAVATOR;
     public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_SIGN;
+    public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_SCYTHE;
+    public static MetaItem<?>.MetaValueItem SHAPE_EXTRUDER_FRYPAN;
 
     public GTCMetaItem() {
         super((short) 0);
@@ -88,6 +90,10 @@ public class GTCMetaItem extends MetaItem<GTCMetaItem.GCMetaValueItem> {
         SHAPE_EXTRUDERS[20] = SHAPE_EXTRUDER_EXCAVATOR = addItem(21, "shape.extruder.excavator")
                 .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(Materials.Steel, M * 4)));
         SHAPE_EXTRUDERS[21] = SHAPE_EXTRUDER_SIGN = addItem(22, "shape.extruder.sign")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(Materials.Steel, M * 4)));
+        SHAPE_EXTRUDERS[22] = SHAPE_EXTRUDER_SCYTHE = addItem(23, "shape.extruder.scythehead")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(Materials.Steel, M * 4)));
+        SHAPE_EXTRUDERS[23] = SHAPE_EXTRUDER_FRYPAN = addItem(24, "shape.extruder.pan")
                 .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(Materials.Steel, M * 4)));
 
     }
