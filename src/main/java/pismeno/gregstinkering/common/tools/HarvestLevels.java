@@ -24,7 +24,7 @@ public class HarvestLevels {
         return harvestLevelNames.containsKey(num) ? (String)harvestLevelNames.get(num) : String.valueOf(num);
     }
 
-    public static void init() {
+    public static void preInit() {
         harvestLevelNames.put(5, TinkerMaterials.cobalt.getTextColor() + Util.translate("ui.mininglevel.duranium", new Object[0]));
     }
 }

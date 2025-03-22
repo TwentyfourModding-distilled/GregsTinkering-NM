@@ -16,7 +16,7 @@ import java.util.Random;
 public class TraitPlunderous extends AbstractTraitLeveled {
 
     public TraitPlunderous(int levels) {
-        super("plunderous", 16766720, 3, levels);
+        super("plunderous", 0xdb690b, 3, levels);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
