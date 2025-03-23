@@ -16,23 +16,18 @@ public class TraitResonance extends AbstractTrait {
     public static final TinkerPotion Resonance = new TinkerPotion(Util.getResource("resonance"), false, true);
     public static final TinkerPotion ResonanceTime = new TinkerPotion(Util.getResource("resonance_time"), false, true);
 
-    public TraitResonance() {
-        super("resonance", TextFormatting.YELLOW);
-    }
+    public TraitResonance() {super("resonance", TextFormatting.YELLOW);}
 
     public void miningSpeed(ItemStack tool, PlayerEvent.BreakSpeed event) {
         float boost = Resonance.getLevel(event.getEntityPlayer());
         boost /= 37.5F;
         event.setNewSpeed(event.getNewSpeed() + event.getNewSpeed() * boost);
-        GregsTinkering.LOGGER.info("Speed: " + event.getNewSpeed());
     }
 
     public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
         if (Resonance.getLevel(player) == 15) {
             newDamage = damage * 1.4F;
-            GregsTinkering.LOGGER.info("Resonance before stacks: " + Resonance.getLevel(player));
             Resonance.apply(player, 1, 1);
-            GregsTinkering.LOGGER.info("Resonance after stacks: " + Resonance.getLevel(player));
         }
 
         return super.damage(tool, player, target, damage, newDamage, isCritical);
@@ -51,7 +46,6 @@ public class TraitResonance extends AbstractTrait {
         level += Resonance.getLevel(player);
         level = Math.min(15, level);
         applyStacks(player, level, 160, 30);
-        GregsTinkering.LOGGER.info("Resonance: " + Resonance.getLevel(player));
     }
 
     private void applyStacks(EntityLivingBase player, int level, int duration, int cooldown) {
