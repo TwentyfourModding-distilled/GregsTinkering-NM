@@ -25,6 +25,6 @@ public class HarvestLevels {
     }
 
     public static void preInit() {
-        harvestLevelNames.put(5, TinkerMaterials.cobalt.getTextColor() + Util.translate("ui.mininglevel.duranium", new Object[0]));
+        harvestLevelNames.put(5, TextFormatting.DARK_AQUA + Util.translate("ui.mininglevel.duranium", new Object[0]));
     }
 }

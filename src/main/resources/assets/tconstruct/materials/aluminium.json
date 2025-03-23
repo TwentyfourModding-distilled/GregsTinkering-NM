@@ -1,8 +1,8 @@
 {
-    "type": "metal",
+    "type": "colored",
     "parameters": {
-        "color": "2B2B2B",
-        "shinyness": 0.1,
+        "color": "649CBB",
+        "shinyness": 0.0,
         "brightness": 0.0,
         "hueshift": 0.0
     }
