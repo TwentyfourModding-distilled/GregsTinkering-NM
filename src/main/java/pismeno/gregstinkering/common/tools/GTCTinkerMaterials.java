@@ -23,15 +23,16 @@ public final class GTCTinkerMaterials {
 
     public static final Material NAQUADAH_ALLOY = registerMaterial("naquadah_alloy",TextFormatting.BLACK, VA[IV], TinkerTraits.magnetic2, TinkerTraits.magnetic);
     public static final Material STAINLESS_STEEL = registerMaterial("stainless_steel", TextFormatting.AQUA, VA[HV],TinkerTraits.sharp, TinkerTraits.stiff);
-    public static final Material VANADIUM_STEEL = registerMaterial("vanadium_steel", TextFormatting.AQUA, VA[MV],TinkerTraits.sharp, TinkerTraits.stiff);
+    public static final Material VANADIUM_STEEL = registerMaterial("vanadium_steel", TextFormatting.GRAY, VA[MV],TinkerTraits.sharp, TinkerTraits.stiff);
     public static final Material DAMASCUS_STEEL = registerMaterial("damascus_steel", TextFormatting.DARK_GRAY, VA[LV],GTCTinkerTraits.plunderous2, GTCTinkerTraits.plunderous);
-    public static final Material TUNGSTEN_STEEL = registerMaterial("tungsten_steel", TextFormatting.DARK_PURPLE, VA[EV], null, GTCTinkerTraits.piercer);
+    public static final Material TUNGSTEN_STEEL = registerMaterial("tungsten_steel", TextFormatting.DARK_BLUE, VA[EV], null, GTCTinkerTraits.piercer);
+    public static final Material RED_STEEL = registerMaterial("red_steel", TextFormatting.DARK_RED, VA[MV], GTCTinkerTraits.hungerbound2, GTCTinkerTraits.hungerbound);
     public static final Material WROUGHT_IRON = registerMaterial("wrought_iron", TextFormatting.GRAY, VA[ULV],TinkerTraits.magnetic2, TinkerTraits.magnetic);
     public static final Material COBALT_BRASS = registerMaterial("cobalt_brass", TextFormatting.GRAY, VA[MV],GTCTinkerTraits.resonance, TinkerTraits.lightweight);
     public static final Material DURANIUM = registerMaterial("duranium", TextFormatting.DARK_AQUA, VA[UV],null, TinkerTraits.dense);
     public static final Material ROSE_GOLD = registerMaterial("rose_gold", TextFormatting.GOLD, VA[MV],null, TinkerTraits.established);
     public static final Material PLASTIC = registerMaterial("plastic", TextFormatting.GRAY, VA[MV],null, TinkerTraits.unnatural);
-    public static final Material ALUMINIUM = registerMaterial("aluminium", TextFormatting.BLUE, VA[MV],TinkerTraits.sharp, TinkerTraits.lightweight);
+    public static final Material ALUMINIUM = registerMaterial("aluminium", TextFormatting.DARK_AQUA, VA[MV],TinkerTraits.sharp, TinkerTraits.lightweight);
     public static final Material HSSE = registerMaterial("hss_e", TextFormatting.DARK_GREEN, VA[EV],TinkerTraits.sharp, TinkerTraits.aridiculous);
     public static final Material INVAR = registerMaterial("invar", TextFormatting.DARK_GREEN, VA[ULV],TinkerTraits.stonebound, TinkerTraits.established);
     public static final Material ULTIMET = registerMaterial("ultimet", TextFormatting.LIGHT_PURPLE, VA[HV],GTCTinkerTraits.airy, TinkerTraits.dense);
@@ -63,7 +64,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 VANADIUM_STEEL,
-                new HeadMaterialStats(1470, 5.0f, 5.0f, HarvestLevels.OBSIDIAN),
+                new HeadMaterialStats(1470, 6.0f, 6.0f, HarvestLevels.OBSIDIAN),
                 new HandleMaterialStats(0.7f, 330),
                 new ExtraMaterialStats(350),
                 new BowMaterialStats(0.3f, 1.1f, 3.0f)
@@ -83,6 +84,14 @@ public final class GTCTinkerMaterials {
                 new HandleMaterialStats(0.9f, 700),
                 new ExtraMaterialStats(600),
                 new BowMaterialStats(0.8f, 2.8f, 15.8f)
+        );
+
+        TinkerRegistry.addMaterialStats(
+                RED_STEEL,
+                new HeadMaterialStats(2300, 10.0F, 9.0F, HarvestLevels.OBSIDIAN),
+                new HandleMaterialStats(1.1f, 900),
+                new ExtraMaterialStats(660),
+                new BowMaterialStats(1.0f, 0.95f, 7.0f)
         );
 
         TinkerRegistry.addMaterialStats(
@@ -180,6 +189,9 @@ public final class GTCTinkerMaterials {
 
         TUNGSTEN_STEEL.addCommonItems("TungstenSteel");
         TUNGSTEN_STEEL.setRepresentativeItem(OreDictUnifier.get(OrePrefix.ingot, Materials.TungstenSteel));
+
+        RED_STEEL.addCommonItems("RedSteel");
+        RED_STEEL.setRepresentativeItem(OreDictUnifier.get(OrePrefix.ingot, Materials.RedSteel));
 
         WROUGHT_IRON.addCommonItems("WroughtIron");
         WROUGHT_IRON.setRepresentativeItem(OreDictUnifier.get(OrePrefix.ingot, Materials.WroughtIron));

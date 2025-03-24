@@ -13,8 +13,8 @@ import slimeknights.tconstruct.library.potion.TinkerPotion;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class TraitResonance extends AbstractTrait {
-    public static final TinkerPotion Resonance = new TinkerPotion(Util.getResource("resonance"), false, true);
-    public static final TinkerPotion ResonanceTime = new TinkerPotion(Util.getResource("resonance_time"), false, true);
+    public static final TinkerPotion Resonance = new TinkerPotion(Util.getResource("resonance"), false, false);
+    public static final TinkerPotion ResonanceTime = new TinkerPotion(Util.getResource("resonance_time"), false, false);
 
     public TraitResonance() {super("resonance", TextFormatting.YELLOW);}
 
@@ -52,13 +52,13 @@ public class TraitResonance extends AbstractTrait {
         if (player.getActivePotionEffect(ResonanceTime) != null){
             if (player.getActivePotionEffect(ResonanceTime).getDuration() <= cooldown) {
                 Resonance.apply(player, duration, level);
-                ResonanceTime.apply(player, duration, 1);
+                ResonanceTime.apply(player, duration);
             } else {
                 Resonance.apply(player, duration, Resonance.getLevel(player));
             }
         } else {
             Resonance.apply(player, duration, 5);
-            ResonanceTime.apply(player, duration, 1);
+            ResonanceTime.apply(player, duration);
         }
     }
 }

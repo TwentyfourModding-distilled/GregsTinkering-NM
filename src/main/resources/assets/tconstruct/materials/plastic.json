@@ -3,7 +3,7 @@
     "parameters": {
         "color": "9C9C9C",
         "shinyness": 0.0,
-        "brightness": 0.0,
+        "brightness": 0.3,
         "hueshift": 0.0
     }
 }
