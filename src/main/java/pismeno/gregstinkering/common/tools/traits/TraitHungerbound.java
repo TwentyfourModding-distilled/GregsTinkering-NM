@@ -13,7 +13,6 @@ public class TraitHungerbound extends AbstractTraitLeveled {
         super("hungerbound", 16762381, 3, levels);
     }
 
-    @Override
     public int onToolDamage(ItemStack tool, int damage, int newDamage, EntityLivingBase entity) {
         if (entity instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entity;

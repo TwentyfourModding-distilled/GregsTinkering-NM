@@ -1,0 +1,9 @@
+{
+    "type": "colored",
+    "parameters": {
+        "color": "C3C3C3",
+        "shinyness": 0.0,
+        "brightness": 0.3,
+        "hueshift": 0.0
+    }
+}

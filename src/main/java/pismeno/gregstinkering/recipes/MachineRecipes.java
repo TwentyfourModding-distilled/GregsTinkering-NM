@@ -1,5 +1,6 @@
 package pismeno.gregstinkering.recipes;
 
+import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
@@ -10,10 +11,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import pismeno.gregstinkering.common.tools.GTCMetaItem;
 import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.tools.TinkerMaterials;
 import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.Iterator;
 
+import static gregtech.api.GTValues.*;
 import static pismeno.gregstinkering.common.tools.GTCTinkerMaterials.*;
 
 public class MachineRecipes {
@@ -27,152 +30,18 @@ public class MachineRecipes {
 
         while (materials.hasNext()) {
             Material material = (Material) materials.next();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_ARROWHEAD)
-                    .outputs(TinkerTools.arrowHead.getItemstackWithMaterial(material))
-                    .duration(400).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_BEHEADER)
-                    .outputs(TinkerTools.largeSwordBlade.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_BINDING)
-                    .outputs(TinkerTools.binding.getItemstackWithMaterial(material))
-                    .duration(600).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_TOUGHBINDING)
-                    .outputs(TinkerTools.toughBinding.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_BOWLIMB)
-                    .outputs(TinkerTools.bowLimb.getItemstackWithMaterial(material))
-                    .duration(600).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_GUARD)
-                    .outputs(TinkerTools.handGuard.getItemstackWithMaterial(material))
-                    .duration(600).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_CROSSGUARD)
-                    .outputs(TinkerTools.crossGuard.getItemstackWithMaterial(material))
-                    .duration(600).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_WIDEGUARD)
-                    .outputs(TinkerTools.wideGuard.getItemstackWithMaterial(material))
-                    .duration(600).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SHOVEL)
-                    .outputs(TinkerTools.shovelHead.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_EXCAVATOR)
-                    .outputs(TinkerTools.excavatorHead.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_HAMMER)
-                    .outputs(TinkerTools.hammerHead.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_KAMA)
-                    .outputs(TinkerTools.kamaHead.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_KNIFEBLADE)
-                    .outputs(TinkerTools.knifeBlade.getItemstackWithMaterial(material))
-                    .duration(700).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_LARGEPLATE)
-                    .outputs(TinkerTools.largePlate.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_AXE)
-                    .outputs(TinkerTools.axeHead.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_LUMBERAXE)
-                    .outputs(TinkerTools.broadAxeHead.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_PICKAXE)
-                    .outputs(TinkerTools.pickHead.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SHARPENINGKIT)
-                    .outputs(TinkerTools.sharpeningKit.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SIGN)
-                    .outputs(TinkerTools.signHead.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SWORDBLADE)
-                    .outputs(TinkerTools.swordBlade.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_TOOLROD)
-                    .outputs(TinkerTools.toolRod.getItemstackWithMaterial(material))
-                    .duration(600).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_TOUGHTOOLROD)
-                    .outputs(TinkerTools.toughToolRod.getItemstackWithMaterial(material))
-                    .duration(900).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SCYTHE)
-                    .outputs(TinkerTools.scytheHead.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
-
-            RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
-                    .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
-                    .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_FRYPAN)
-                    .outputs(TinkerTools.panHead.getItemstackWithMaterial(material))
-                    .duration(1200).EUt(TIER.get(material)).buildAndRegister();
+            buildToolPartRecipes(material, TIER.get(material));
         }
+
+        buildToolPartRecipes(TinkerMaterials.bronze, VA[ULV]);
+        buildToolPartRecipes(TinkerMaterials.iron, VA[ULV]);
+        buildToolPartRecipes(TinkerMaterials.pigiron, VA[ULV]);
+        buildToolPartRecipes(TinkerMaterials.copper, VA[ULV]);
+        buildToolPartRecipes(TinkerMaterials.lead, VA[ULV]);
+        buildToolPartRecipes(TinkerMaterials.steel, VA[LV]);
+        buildToolPartRecipes(TinkerMaterials.cobalt, VA[LV]);
     }
+
     private static void initShapeExtruders() {
         buildExtruderShapeRecipes("pick_head", GTCMetaItem.SHAPE_EXTRUDER_PICKAXE);
         buildExtruderShapeRecipes("arrowhead", GTCMetaItem.SHAPE_EXTRUDER_ARROWHEAD);
@@ -202,6 +71,7 @@ public class MachineRecipes {
 
     private static void buildExtruderShapeRecipes(String castType, MetaItem<?>.MetaValueItem shapeValue) {
         ItemStack cast = getCast(castType);
+        ItemStack pattern = getPattern(castType);
         ItemStack shape = shapeValue.getStackForm();
         ItemStack blank = MetaItems.SHAPE_EMPTY.getStackForm();
 
@@ -222,6 +92,158 @@ public class MachineRecipes {
                 .notConsumable(shape)
                 .outputs(shape)
                 .duration(120).EUt(22).buildAndRegister();
+
+        RecipeMaps.FORMING_PRESS_RECIPES.recipeBuilder()
+                .inputs(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("tconstruct", "pattern"))))
+                .notConsumable(pattern)
+                .outputs(pattern)
+                .duration(50).EUt(2).buildAndRegister();
+    }
+
+    private static void buildToolPartRecipes(Material material, int duration) {
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_ARROWHEAD)
+                .outputs(TinkerTools.arrowHead.getItemstackWithMaterial(material))
+                .duration(400).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_BEHEADER)
+                .outputs(TinkerTools.largeSwordBlade.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_BINDING)
+                .outputs(TinkerTools.binding.getItemstackWithMaterial(material))
+                .duration(600).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_TOUGHBINDING)
+                .outputs(TinkerTools.toughBinding.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_BOWLIMB)
+                .outputs(TinkerTools.bowLimb.getItemstackWithMaterial(material))
+                .duration(600).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_GUARD)
+                .outputs(TinkerTools.handGuard.getItemstackWithMaterial(material))
+                .duration(600).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_CROSSGUARD)
+                .outputs(TinkerTools.crossGuard.getItemstackWithMaterial(material))
+                .duration(600).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_WIDEGUARD)
+                .outputs(TinkerTools.wideGuard.getItemstackWithMaterial(material))
+                .duration(600).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SHOVEL)
+                .outputs(TinkerTools.shovelHead.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_EXCAVATOR)
+                .outputs(TinkerTools.excavatorHead.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_HAMMER)
+                .outputs(TinkerTools.hammerHead.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_KAMA)
+                .outputs(TinkerTools.kamaHead.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_KNIFEBLADE)
+                .outputs(TinkerTools.knifeBlade.getItemstackWithMaterial(material))
+                .duration(700).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_LARGEPLATE)
+                .outputs(TinkerTools.largePlate.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_AXE)
+                .outputs(TinkerTools.axeHead.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_LUMBERAXE)
+                .outputs(TinkerTools.broadAxeHead.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_PICKAXE)
+                .outputs(TinkerTools.pickHead.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SHARPENINGKIT)
+                .outputs(TinkerTools.sharpeningKit.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SIGN)
+                .outputs(TinkerTools.signHead.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(2, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SWORDBLADE)
+                .outputs(TinkerTools.swordBlade.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(1, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_TOOLROD)
+                .outputs(TinkerTools.toolRod.getItemstackWithMaterial(material))
+                .duration(600).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_TOUGHTOOLROD)
+                .outputs(TinkerTools.toughToolRod.getItemstackWithMaterial(material))
+                .duration(900).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(8, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_SCYTHE)
+                .outputs(TinkerTools.scytheHead.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
+
+        RecipeMaps.EXTRUDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(3, material.getRepresentativeItem()))
+                .notConsumable(GTCMetaItem.SHAPE_EXTRUDER_FRYPAN)
+                .outputs(TinkerTools.panHead.getItemstackWithMaterial(material))
+                .duration(1200).EUt(duration).buildAndRegister();
     }
 
     private static ItemStack getCast(String type) {
@@ -232,5 +254,15 @@ public class MachineRecipes {
         cast.setTagCompound(tag);
 
         return cast;
+    }
+
+    private static ItemStack getPattern(String type) {
+        ItemStack pattern = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("tconstruct", "pattern")));
+        NBTTagCompound tag = new NBTTagCompound();
+
+        tag.setString("PartType", "tconstruct:" + type);
+        pattern.setTagCompound(tag);
+
+        return pattern;
     }
 }

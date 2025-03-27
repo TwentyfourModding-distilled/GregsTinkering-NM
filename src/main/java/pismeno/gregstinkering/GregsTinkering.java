@@ -1,5 +1,6 @@
 package pismeno.gregstinkering;
 
+import gregtech.api.unification.material.event.MaterialEvent;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -8,15 +9,12 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import pismeno.gregstinkering.common.tools.GTCMetaItems;
-import pismeno.gregstinkering.common.tools.GTCTinkerMaterials;
-import pismeno.gregstinkering.common.tools.GTCTinkerTraits;
-import pismeno.gregstinkering.common.tools.HarvestLevels;
+import pismeno.gregstinkering.common.tools.*;
 import pismeno.gregstinkering.recipes.MachineRecipes;
-import slimeknights.tconstruct.tools.TinkerTraits;
 
 @Mod(
         modid = Tags.MODID,
