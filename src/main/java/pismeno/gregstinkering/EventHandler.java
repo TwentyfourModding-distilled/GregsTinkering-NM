@@ -8,6 +8,9 @@ import pismeno.gregstinkering.common.tools.GTCGregtechMaterials;
 
 @Mod.EventBusSubscriber(modid = Tags.MODID)
 public final class EventHandler {
+
+    private EventHandler() {}
+
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onMaterialRegistration(MaterialEvent event) {
         GTCGregtechMaterials.init();
