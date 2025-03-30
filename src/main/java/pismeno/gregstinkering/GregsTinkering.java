@@ -1,6 +1,5 @@
 package pismeno.gregstinkering;
 
-import gregtech.api.unification.material.event.MaterialEvent;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -9,12 +8,16 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pismeno.gregstinkering.common.recipes.MachineRecipes;
 import pismeno.gregstinkering.common.tools.*;
-import pismeno.gregstinkering.recipes.MachineRecipes;
+import pismeno.gregstinkering.unification.GTCMetaItems;
+import pismeno.gregstinkering.unification.GTCHarvestLevels;
+import pismeno.gregstinkering.unification.WorldgenHandler;
+
+import java.io.IOException;
 
 @Mod(
         modid = Tags.MODID,
@@ -33,14 +36,24 @@ public class GregsTinkering {
         MinecraftForge.EVENT_BUS.register(this);
         LOGGER.info("Greg is trying to find a new hobby...");
 
-        HarvestLevels.preInit();
+        GTCHarvestLevels.preInit();
         GTCTinkerMaterials.preInit();
         GTCMetaItems.preInit();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        boolean doesDummyFileExist = WorldgenHandler.INSTANCE.doesDummyFileExist();
         GTCTinkerMaterials.init();
+
+        try {
+            if (!doesDummyFileExist) {
+                WorldgenHandler.INSTANCE.addRemoveVeins();
+                WorldgenHandler.INSTANCE.createDummyFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @EventHandler

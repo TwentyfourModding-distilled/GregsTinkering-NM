@@ -1,4 +1,4 @@
-package pismeno.gregstinkering.common.tools;
+package pismeno.gregstinkering.unification;
 
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.unification.material.Materials;

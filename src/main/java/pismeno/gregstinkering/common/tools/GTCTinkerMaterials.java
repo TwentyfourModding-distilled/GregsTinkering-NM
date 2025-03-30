@@ -4,6 +4,7 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import net.minecraft.util.text.TextFormatting;
+import pismeno.gregstinkering.unification.GTCHarvestLevels;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.traits.ITrait;
@@ -20,6 +21,7 @@ public final class GTCTinkerMaterials {
 
     public static final List<Material> MATERIALS = new ArrayList<>();
     public static final List<Material> BOWSTRING_MATERIALS = new ArrayList<>();
+    public static final List<Material> FLETCHING_MATERIALS = new ArrayList<>();
     public static final Map<Material, Integer> TIER = new HashMap<>();
 
     public static final Material NAQUADAH_ALLOY = registerMaterial("naquadah_alloy",TextFormatting.BLACK, VA[IV], TinkerTraits.magnetic2, TinkerTraits.magnetic);
@@ -57,9 +59,12 @@ public final class GTCTinkerMaterials {
         NEUTRONIUM.addTrait(TinkerTraits.magnetic2, "head");
         NEUTRONIUM.addTrait(TinkerTraits.magnetic2);
 
+        FLETCHING_MATERIALS.add(POLYETHYLENE);
+        FLETCHING_MATERIALS.add(RUBBER);
+
         TinkerRegistry.addMaterialStats(
                 NAQUADAH_ALLOY,
-                new HeadMaterialStats(3092, 42.0f, 14.0f, HarvestLevels.DURANIUM),
+                new HeadMaterialStats(3092, 42.0f, 14.0f, GTCHarvestLevels.DURANIUM),
                 new HandleMaterialStats(1.1f, 520),
                 new ExtraMaterialStats(550),
                 new BowMaterialStats(0.2f, 1.6f, 18.0f)
@@ -67,7 +72,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 STAINLESS_STEEL,
-                new HeadMaterialStats(980, 11.0f, 8.0f, HarvestLevels.OBSIDIAN),
+                new HeadMaterialStats(980, 11.0f, 8.0f, GTCHarvestLevels.OBSIDIAN),
                 new HandleMaterialStats(0.9f, 200),
                 new ExtraMaterialStats(320),
                 new BowMaterialStats(0.8f, 2.3f, 12.0f)
@@ -75,7 +80,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 VANADIUM_STEEL,
-                new HeadMaterialStats(1470, 6.0f, 6.0f, HarvestLevels.OBSIDIAN),
+                new HeadMaterialStats(1470, 6.0f, 6.0f, GTCHarvestLevels.OBSIDIAN),
                 new HandleMaterialStats(0.7f, 330),
                 new ExtraMaterialStats(350),
                 new BowMaterialStats(0.3f, 1.1f, 3.0f)
@@ -83,7 +88,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 DAMASCUS_STEEL,
-                new HeadMaterialStats(980, 11.0f, 8.0f, HarvestLevels.OBSIDIAN),
+                new HeadMaterialStats(980, 11.0f, 8.0f, GTCHarvestLevels.OBSIDIAN),
                 new HandleMaterialStats(0.9f, 200),
                 new ExtraMaterialStats(320),
                 new BowMaterialStats(0.5f, 2.3f, 12.0f)
@@ -91,7 +96,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 TUNGSTEN_STEEL,
-                new HeadMaterialStats(1920, 13.0F, 10.0F, HarvestLevels.COBALT),
+                new HeadMaterialStats(1920, 13.0F, 10.0F, GTCHarvestLevels.COBALT),
                 new HandleMaterialStats(0.9f, 700),
                 new ExtraMaterialStats(600),
                 new BowMaterialStats(0.8f, 2.8f, 15.8f)
@@ -99,7 +104,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 RED_STEEL,
-                new HeadMaterialStats(2300, 10.0F, 9.0F, HarvestLevels.OBSIDIAN),
+                new HeadMaterialStats(2300, 10.0F, 9.0F, GTCHarvestLevels.OBSIDIAN),
                 new HandleMaterialStats(1.1f, 900),
                 new ExtraMaterialStats(660),
                 new BowMaterialStats(1.0f, 0.95f, 7.0f)
@@ -107,7 +112,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 BLUE_STEEL,
-                new HeadMaterialStats(1064, 17.0F, 9.0F, HarvestLevels.OBSIDIAN),
+                new HeadMaterialStats(1064, 17.0F, 9.0F, GTCHarvestLevels.OBSIDIAN),
                 new HandleMaterialStats(1.3f, 590),
                 new ExtraMaterialStats(440),
                 new BowMaterialStats(2.0f, 1.1f, 9.0f)
@@ -115,7 +120,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 WROUGHT_IRON,
-                new HeadMaterialStats(292, 6.0F, 4.0F, HarvestLevels.DIAMOND),
+                new HeadMaterialStats(292, 6.0F, 4.0F, GTCHarvestLevels.DIAMOND),
                 new HandleMaterialStats(0.9f, 80),
                 new ExtraMaterialStats(60),
                 new BowMaterialStats(0.5f, 2.3f, 4.0f)
@@ -123,7 +128,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 COBALT_BRASS,
-                new HeadMaterialStats(990, 12.5F, 3.8F, HarvestLevels.COBALT),
+                new HeadMaterialStats(990, 12.5F, 3.8F, GTCHarvestLevels.COBALT),
                 new HandleMaterialStats(0.9f, 250),
                 new ExtraMaterialStats(380),
                 new BowMaterialStats(1.8f, 1.3f, 3.5f)
@@ -131,7 +136,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 DURANIUM,
-                new HeadMaterialStats(7890, 17.5F, 17.0F, HarvestLevels.DURANIUM),
+                new HeadMaterialStats(7890, 17.5F, 17.0F, GTCHarvestLevels.DURANIUM),
                 new HandleMaterialStats(1.3f, 3000),
                 new ExtraMaterialStats(2880),
                 new BowMaterialStats(3.2f, 5.3f, 19.0f)
@@ -139,14 +144,14 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 ROSE_GOLD,
-                new HeadMaterialStats(710, 15.5F, 6.0F, HarvestLevels.DIAMOND),
+                new HeadMaterialStats(710, 15.5F, 6.0F, GTCHarvestLevels.DIAMOND),
                 new HandleMaterialStats(0.6f, 200),
                 new ExtraMaterialStats(170),
                 new BowMaterialStats(0.6f, 1.8f, 5.4f)
         );
         TinkerRegistry.addMaterialStats(
                 POLYVINYL_CHLORIDE,
-                new HeadMaterialStats(190, 2.8F, 2.2F, HarvestLevels.STONE),
+                new HeadMaterialStats(190, 2.8F, 2.2F, GTCHarvestLevels.STONE),
                 new HandleMaterialStats(0.6f, 60),
                 new ExtraMaterialStats(120),
                 new BowMaterialStats(0.7f, 0.7f, 3.4f)
@@ -154,7 +159,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 ALUMINIUM,
-                new HeadMaterialStats(700, 2.8F, 10.2F, HarvestLevels.DIAMOND),
+                new HeadMaterialStats(700, 2.8F, 10.2F, GTCHarvestLevels.DIAMOND),
                 new HandleMaterialStats(1.1f, 510),
                 new ExtraMaterialStats(220),
                 new BowMaterialStats(1.3f, 1.6f, 3.2f)
@@ -162,7 +167,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 HSSE,
-                new HeadMaterialStats(2890, 8.8F, 12.2F, HarvestLevels.COBALT),
+                new HeadMaterialStats(2890, 8.8F, 12.2F, GTCHarvestLevels.COBALT),
                 new HandleMaterialStats(1.1f, 1210),
                 new ExtraMaterialStats(1100),
                 new BowMaterialStats(1.1f, 1.2f, 18.1f)
@@ -170,7 +175,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 INVAR,
-                new HeadMaterialStats(364, 8.1F, 5.9F, HarvestLevels.DIAMOND),
+                new HeadMaterialStats(364, 8.1F, 5.9F, GTCHarvestLevels.DIAMOND),
                 new HandleMaterialStats(0.6f, 110),
                 new ExtraMaterialStats(100),
                 new BowMaterialStats(1.2f, 0.9f, 5.7f)
@@ -178,7 +183,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 ULTIMET,
-                new HeadMaterialStats(1800, 14.0F, 11.1F, HarvestLevels.COBALT),
+                new HeadMaterialStats(1800, 14.0F, 11.1F, GTCHarvestLevels.COBALT),
                 new HandleMaterialStats(0.9f, 900),
                 new ExtraMaterialStats(700),
                 new BowMaterialStats(1.0f, 1.7f, 11.1f)
@@ -186,7 +191,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 STERLING_SILVER,
-                new HeadMaterialStats(730, 5.0F, 7.0F, HarvestLevels.DIAMOND),
+                new HeadMaterialStats(730, 5.0F, 7.0F, GTCHarvestLevels.DIAMOND),
                 new HandleMaterialStats(0.95f, 110),
                 new ExtraMaterialStats(220),
                 new BowMaterialStats(1.25f, 2.7f, 12.0f)
@@ -194,7 +199,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 TUNGSTENCARBIDE,
-                new HeadMaterialStats(820, 60.0F, 5.0F, HarvestLevels.COBALT),
+                new HeadMaterialStats(820, 60.0F, 5.0F, GTCHarvestLevels.COBALT),
                 new HandleMaterialStats(0.95f, 110),
                 new ExtraMaterialStats(220),
                 new BowMaterialStats(5.25f, 8.7f, 4.0f)
@@ -202,7 +207,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 NEUTRONIUM,
-                new HeadMaterialStats(10000, 180.0F, 100.0F, HarvestLevels.NEUTRONIUM),
+                new HeadMaterialStats(10000, 180.0F, 100.0F, GTCHarvestLevels.NEUTRONIUM),
                 new HandleMaterialStats(10.0f, 10000),
                 new ExtraMaterialStats(10000),
                 new BowMaterialStats(15.0f, 20.5f, 125.0f)
@@ -210,7 +215,7 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 TITANIUM,
-                new HeadMaterialStats(1476, 10.0F, 9.0F, HarvestLevels.COBALT),
+                new HeadMaterialStats(1476, 10.0F, 9.0F, GTCHarvestLevels.COBALT),
                 new HandleMaterialStats(1.1f, 577),
                 new ExtraMaterialStats(530),
                 new BowMaterialStats(1.8f, 3.3f, 14.0f)
@@ -218,12 +223,14 @@ public final class GTCTinkerMaterials {
 
         TinkerRegistry.addMaterialStats(
                 POLYETHYLENE,
-                new BowStringMaterialStats(1.4F)
+                new BowStringMaterialStats(1.4F),
+                new FletchingMaterialStats(1.2F, 1.7F)
         );
 
         TinkerRegistry.addMaterialStats(
                 RUBBER,
-                new BowStringMaterialStats(1.0F)
+                new BowStringMaterialStats(1.0F),
+                new FletchingMaterialStats(1.0F, 1.8F)
         );
     }
 

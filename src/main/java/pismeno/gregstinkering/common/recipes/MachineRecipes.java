@@ -1,6 +1,5 @@
-package pismeno.gregstinkering.recipes;
+package pismeno.gregstinkering.common.recipes;
 
-import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.category.RecipeCategories;
@@ -11,12 +10,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import pismeno.gregstinkering.common.tools.GTCMetaItem;
+import pismeno.gregstinkering.unification.GTCMetaItem;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.tools.TinkerMaterials;
 import slimeknights.tconstruct.tools.TinkerTools;
 
-import java.util.Collection;
 import java.util.Iterator;
 
 import static gregtech.api.GTValues.*;
@@ -26,6 +24,7 @@ public class MachineRecipes {
     public static void init() {
         initToolParts();
         initBowstrings();
+        initFletchings();
         initShapeExtruders();
     }
 
@@ -60,6 +59,15 @@ public class MachineRecipes {
         while (materials.hasNext()) {
             Material material = (Material) materials.next();
             buildBowstringRecipes(material, TIER.get(material));
+        }
+    }
+
+    private static void initFletchings() {
+        Iterator materials = FLETCHING_MATERIALS.iterator();
+
+        while (materials.hasNext()) {
+            Material material = (Material) materials.next();
+            buildFletchingRecipes(material, TIER.get(material));
         }
     }
 
@@ -437,11 +445,26 @@ public class MachineRecipes {
         RecipeMaps.WIREMILL_RECIPES.recipeBuilder()
                 .inputs(GTUtility.copy(32, material.getRepresentativeItem()))
                 .outputs(TinkerTools.bowString.getItemstackWithMaterial(material))
+                .circuitMeta(7)
                 .duration(400).EUt(eut).buildAndRegister();
 
         RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder()
                 .inputs(TinkerTools.bowString.getItemstackWithMaterial(material))
                 .fluidOutputs(new FluidStack(material.getFluid(), 8 * 144))
+                .category(RecipeCategories.EXTRACTOR_RECYCLING)
+                .duration(40 * 2).EUt(eut).buildAndRegister();
+    }
+
+    private static void buildFletchingRecipes(Material material, int eut) {
+        RecipeMaps.BENDER_RECIPES.recipeBuilder()
+                .inputs(GTUtility.copy(16, material.getRepresentativeItem()))
+                .outputs(TinkerTools.fletching.getItemstackWithMaterial(material))
+                .circuitMeta(7)
+                .duration(400).EUt(eut).buildAndRegister();
+
+        RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder()
+                .inputs(TinkerTools.fletching.getItemstackWithMaterial(material))
+                .fluidOutputs(new FluidStack(material.getFluid(), 4 * 144))
                 .category(RecipeCategories.EXTRACTOR_RECYCLING)
                 .duration(40 * 2).EUt(eut).buildAndRegister();
     }

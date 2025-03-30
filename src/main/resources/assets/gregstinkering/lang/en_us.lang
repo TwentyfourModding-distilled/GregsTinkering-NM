@@ -1,5 +1,6 @@
 ui.mininglevel.duranium=Duranium
-ui.mininglevel.duranium=Neutronium
+ui.mininglevel.neutronium=Neutronium
+
 metaitem.shape.extruder.arrowhead.name=Extruder Shape (Arrow Head)
 metaitem.shape.extruder.arrowhead.tooltip=Extruder Shape for making Arrow Heads
 metaitem.shape.extruder.axehead.name=Extruder Shape (Axe Head)
@@ -48,6 +49,7 @@ metaitem.shape.extruder.toughtoolrod.name=Extruder Shape (Tough Tool Rod)
 metaitem.shape.extruder.toughtoolrod.tooltip=Extruder Shape for making Tough Tool Rods
 metaitem.shape.extruder.wideguard.name=Extruder Shape (Wideguard)
 metaitem.shape.extruder.wideguard.tooltip=Extruder Shape for making Wideguards
+
 material.naquadah_alloy.name=Naquadah Alloy
 material.stainless_steel.name=Stainless Steel
 material.damascus_steel.name=Damascus Steel
@@ -69,6 +71,12 @@ material.blue_steel.name=Blue Steel
 material.tungstencarbide.name=Tangstencarbide
 material.neutronium.name=Neutronium
 material.titanium.name=Titanium
+material.rubber.name=Rubber
+
+gregstinkering.material.ardite=Ardite
+gregstinkering.material.manyullyn=Manyullyn
+gregstinkering.material.pigiron=Pigiron
+
 modifier.plunderous.name=Plunderous
 modifier.plunderous.desc=§oAye, Avast!§r\nIncreases count of drops from mobs.
 modifier.resonance.name=Resonance

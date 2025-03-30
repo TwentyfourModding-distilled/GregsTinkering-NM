@@ -1,4 +1,4 @@
-package pismeno.gregstinkering.common.tools;
+package pismeno.gregstinkering.unification;
 
 public class GTCMetaItems {
     public static GTCMetaItem META_ITEM;

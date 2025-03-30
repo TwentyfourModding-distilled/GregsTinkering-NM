@@ -1,4 +1,4 @@
-package pismeno.gregstinkering.common.tools;
+package pismeno.gregstinkering.unification;
 
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.Element;
@@ -65,6 +65,7 @@ public final class GTCGregtechMaterials {
         ignoredItems.put(Ardite, new OrePrefix[]{ingot, block, nugget});
         ignoredItems.put(Manyullyn, new OrePrefix[]{ingot, block, nugget});
         ignoredItems.put(PigIron, new OrePrefix[]{ingot, block, nugget});
+        ignoredItems.put(Cobalt, new OrePrefix[]{ingot, block, nugget});
 
         for (Map.Entry<Material, OrePrefix[]> entry : ignoredItems.entrySet()) {
             Material material = entry.getKey();
