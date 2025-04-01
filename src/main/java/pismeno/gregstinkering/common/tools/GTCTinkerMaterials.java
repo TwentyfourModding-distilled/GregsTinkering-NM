@@ -19,6 +19,8 @@ import static gregtech.api.GTValues.*;
 
 public final class GTCTinkerMaterials {
 
+    private GTCTinkerMaterials() {}
+
     public static final List<Material> MATERIALS = new ArrayList<>();
     public static final List<Material> BOWSTRING_MATERIALS = new ArrayList<>();
     public static final List<Material> FLETCHING_MATERIALS = new ArrayList<>();
@@ -47,6 +49,7 @@ public final class GTCTinkerMaterials {
 
     public static final Material POLYETHYLENE = registerBowstringMaterial("polyethylene", TextFormatting.GRAY, VA[MV]);
     public static final Material RUBBER = registerBowstringMaterial("rubber", TextFormatting.BLACK, VA[ULV]);
+    public static final Material SYNTHETIC_RUBBER = registerBowstringMaterial("synthetic_rubber", TextFormatting.DARK_GRAY, VA[HV]);
 
     private static void setStats() {
         DURANIUM.addTrait(TinkerTraits.magnetic2);
@@ -61,6 +64,7 @@ public final class GTCTinkerMaterials {
 
         FLETCHING_MATERIALS.add(POLYETHYLENE);
         FLETCHING_MATERIALS.add(RUBBER);
+        FLETCHING_MATERIALS.add(SYNTHETIC_RUBBER);
 
         TinkerRegistry.addMaterialStats(
                 NAQUADAH_ALLOY,
@@ -232,6 +236,12 @@ public final class GTCTinkerMaterials {
                 new BowStringMaterialStats(1.0F),
                 new FletchingMaterialStats(1.0F, 1.8F)
         );
+
+        TinkerRegistry.addMaterialStats(
+                SYNTHETIC_RUBBER,
+                new BowStringMaterialStats(1.3F),
+                new FletchingMaterialStats(1.2F, 1.8F)
+        );
     }
 
     private static void setRepresentativesAll() {
@@ -257,6 +267,7 @@ public final class GTCTinkerMaterials {
         setRepresentatives("Titanium", TITANIUM, Materials.Titanium, false);
         setRepresentatives("Plastic", POLYETHYLENE, Materials.Polyethylene, true);
         setRepresentatives("Rubber", RUBBER, Materials.Rubber, true);
+        setRepresentatives("Rubber", SYNTHETIC_RUBBER, Materials.StyreneButadieneRubber, true);
     }
 
     public static void preInit() {

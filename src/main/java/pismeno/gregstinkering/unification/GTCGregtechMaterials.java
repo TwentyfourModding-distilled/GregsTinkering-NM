@@ -14,7 +14,7 @@ import java.util.Map;
 import static gregtech.api.unification.Elements.add;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.unification.material.info.MaterialIconSet.METALLIC;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 
 public final class GTCGregtechMaterials {
@@ -32,20 +32,19 @@ public final class GTCGregtechMaterials {
     public static void init() {
         Ardite = new Material.Builder(24000, new ResourceLocation(Tags.MODID,"ardite"))
                 .ingot(3)
-                .liquid(new FluidBuilder().temperature(2284))
+                .liquid(new FluidBuilder())
                 .ore()
                 .color(0xD34117).iconSet(METALLIC)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_BOLT_SCREW,
                         EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
                 .element(Ad)
                 .toolStats(ToolProperty.Builder.of(0.5F, 0.6F, 1810, 4).build())
-                .blast(1780)
                 .build();
 
         Manyullyn = new Material.Builder(24001, new ResourceLocation(Tags.MODID,"manyullyn"))
                 .ingot(3)
-                .liquid(new FluidBuilder().temperature(2026))
-                .color(0xA97DE0).iconSet(METALLIC)
+                .liquid(new FluidBuilder())
+                .color(0x8058B5).iconSet(SHINY)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_BOLT_SCREW,
                         EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
                 .components(Cobalt, 1, Ardite, 1)

@@ -13,4 +13,6 @@ public class GregtechMaterialsModifications {
         Cobalt.setProperty(PropertyKey.TOOL, new ToolProperty(7.0F, 1.0F, 1072, 4));
         Cobalt.setMaterialRGB(0x2376DD);
     }
+
+    private GregtechMaterialsModifications() {}
 }

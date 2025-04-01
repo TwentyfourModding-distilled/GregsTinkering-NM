@@ -1,5 +1,6 @@
 package pismeno.gregstinkering;
 
+import gregtech.api.util.GTLog;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -12,9 +13,11 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pismeno.gregstinkering.common.recipes.MachineRecipes;
+import pismeno.gregstinkering.common.recipes.MeltingRecipes;
 import pismeno.gregstinkering.common.tools.*;
 import pismeno.gregstinkering.unification.GTCMetaItems;
 import pismeno.gregstinkering.unification.GTCHarvestLevels;
+import pismeno.gregstinkering.unification.TConstructConfig;
 import pismeno.gregstinkering.unification.WorldgenHandler;
 
 import java.io.IOException;
@@ -34,11 +37,12 @@ public class GregsTinkering {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
-        LOGGER.info("Greg is trying to find a new hobby...");
+        GTLog.logger.info("Greg is trying to find a new hobby...");
 
         GTCHarvestLevels.preInit();
         GTCTinkerMaterials.preInit();
         GTCMetaItems.preInit();
+        TConstructConfig.preInit();
     }
 
     @EventHandler
@@ -59,6 +63,7 @@ public class GregsTinkering {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         MachineRecipes.init();
+        MeltingRecipes.init();
 
         LOGGER.info("He found a new hobby: " + Tags.MODID + ":" + Tags.VERSION + "!");
     }

@@ -3,6 +3,9 @@ package pismeno.gregstinkering.common.recipes;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.category.RecipeCategories;
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.properties.PropertyKey;
+import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
@@ -18,7 +21,9 @@ import slimeknights.tconstruct.tools.TinkerTools;
 import java.util.Iterator;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.*;
 import static pismeno.gregstinkering.common.tools.GTCTinkerMaterials.*;
+import static pismeno.gregstinkering.unification.GTCGregtechMaterials.*;
 
 public class MachineRecipes {
     public static void init() {
@@ -26,7 +31,10 @@ public class MachineRecipes {
         initBowstrings();
         initFletchings();
         initShapeExtruders();
+        initOther();
     }
+
+    private MachineRecipes() {}
 
     private static void initToolParts() {
         buildToolPartRecipes(TinkerMaterials.bronze, VA[ULV]);
@@ -116,6 +124,42 @@ public class MachineRecipes {
                     .outputs(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("tconstruct", "cast_custom")), 1, i))
                     .duration(120).EUt(22).buildAndRegister();
         }
+    }
+
+    private static void initOther() {
+        RecipeMaps.MIXER_RECIPES.recipeBuilder()
+                .input(OrePrefix.dust, Cobalt)
+                .input(OrePrefix.dust, Ardite)
+                .output(OrePrefix.dust, Manyullyn, 2)
+                .duration(190).EUt(120).buildAndRegister();
+
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(250).EUt(120)
+                .input(OrePrefix.ingot, Cobalt)
+                .input(OrePrefix.dust, Ardite)
+                .output(OrePrefix.ingot, Manyullyn, 2)
+                .buildAndRegister();
+
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(250).EUt(120)
+                .input(OrePrefix.dust, Cobalt)
+                .input(OrePrefix.ingot, Ardite)
+                .output(OrePrefix.ingot, Manyullyn, 2)
+                .buildAndRegister();
+
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(250).EUt(120)
+                .input(OrePrefix.ingot, Cobalt)
+                .input(OrePrefix.ingot, Ardite)
+                .output(OrePrefix.ingot, Manyullyn, 2)
+                .buildAndRegister();
+
+        RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder()
+                .duration(250).EUt(120)
+                .input(OrePrefix.dust, Cobalt)
+                .input(OrePrefix.dust, Ardite)
+                .output(OrePrefix.ingot, Manyullyn, 2)
+                .buildAndRegister();
     }
 
     private static void buildExtruderShapeRecipes(String castType, MetaItem<?>.MetaValueItem shapeValue) {
