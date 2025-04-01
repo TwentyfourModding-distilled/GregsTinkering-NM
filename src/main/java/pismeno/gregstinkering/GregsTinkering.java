@@ -10,17 +10,14 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pismeno.gregstinkering.common.recipes.MachineRecipes;
 import pismeno.gregstinkering.common.recipes.MeltingRecipes;
 import pismeno.gregstinkering.common.tools.*;
-import pismeno.gregstinkering.unification.GTCMetaItems;
-import pismeno.gregstinkering.unification.GTCHarvestLevels;
-import pismeno.gregstinkering.unification.TConstructConfig;
-import pismeno.gregstinkering.unification.WorldgenHandler;
-
-import java.io.IOException;
+import pismeno.gregstinkering.unification.*;
 
 @Mod(
         modid = Tags.MODID,
@@ -34,30 +31,27 @@ public class GregsTinkering {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
 
+    @SideOnly(Side.CLIENT)
+    @EventHandler
+    public void preInitClient(FMLPreInitializationEvent event) {
+        GTCHarvestLevels.preInit();
+    }
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
         GTLog.logger.info("Greg is trying to find a new hobby...");
 
-        GTCHarvestLevels.preInit();
+        Config.preInit(event);
+        TConstructConfig.preInit();
         GTCTinkerMaterials.preInit();
         GTCMetaItems.preInit();
-        TConstructConfig.preInit();
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        boolean doesDummyFileExist = WorldgenHandler.INSTANCE.doesDummyFileExist();
         GTCTinkerMaterials.init();
-
-        try {
-            if (!doesDummyFileExist) {
-                WorldgenHandler.INSTANCE.addRemoveVeins();
-                WorldgenHandler.INSTANCE.createDummyFile();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        WorldgenHandler.init();
     }
 
     @EventHandler

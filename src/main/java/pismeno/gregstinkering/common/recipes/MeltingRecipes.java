@@ -11,6 +11,8 @@ import slimeknights.tconstruct.library.TinkerRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraft.item.ItemStack;
 
+import static slimeknights.tconstruct.common.config.Config.oreToIngotRatio;
+
 public class MeltingRecipes {
     public static void init() {
         addMeltingOres(tinOres, new FluidStack(Materials.Tin.getFluid(), 144));
@@ -56,7 +58,6 @@ public class MeltingRecipes {
 
 
     public static void addMeltingOres(Map<Integer, List<UnificationEntry>> oreMap, FluidStack fluid) {
-        
         for (Map.Entry<Integer, List<UnificationEntry>> entry : oreMap.entrySet()) {
             int key = entry.getKey();
             for (UnificationEntry unificationEntry : entry.getValue()) {
@@ -66,9 +67,9 @@ public class MeltingRecipes {
                 ItemStack nether = new ItemStack(item, 1, 1);
                 ItemStack ender = new ItemStack(item, 1, 2);
 
-                TinkerRegistry.registerMelting(normal, fluid.getFluid(), 144 * key);
-                TinkerRegistry.registerMelting(nether, fluid.getFluid(), 144 * key * 2);
-                TinkerRegistry.registerMelting(ender, fluid.getFluid(), 144 * key * 2);
+                TinkerRegistry.registerMelting(normal, fluid.getFluid(), (int) (oreToIngotRatio * 144 * key));
+                TinkerRegistry.registerMelting(nether, fluid.getFluid(), (int) (oreToIngotRatio * 144 * key * 2));
+                TinkerRegistry.registerMelting(ender, fluid.getFluid(), (int) (oreToIngotRatio * 144 * key * 2));
             }
         }
     }

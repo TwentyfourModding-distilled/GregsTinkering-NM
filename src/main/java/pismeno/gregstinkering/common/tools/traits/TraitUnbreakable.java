@@ -1,12 +1,9 @@
 package pismeno.gregstinkering.common.tools.traits;
 
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextFormatting;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
-import slimeknights.tconstruct.library.traits.AbstractTraitLeveled;
 
 public class TraitUnbreakable extends AbstractTrait {
 

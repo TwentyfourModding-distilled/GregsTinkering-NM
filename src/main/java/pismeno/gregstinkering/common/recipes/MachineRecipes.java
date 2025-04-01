@@ -3,8 +3,6 @@ package pismeno.gregstinkering.common.recipes;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.category.RecipeCategories;
-import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.util.GTUtility;
 import gregtech.common.items.MetaItems;

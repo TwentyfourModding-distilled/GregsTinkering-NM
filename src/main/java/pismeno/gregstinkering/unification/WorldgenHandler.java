@@ -61,6 +61,19 @@ public class WorldgenHandler {
 
     private WorldgenHandler() {}
 
+    public static void init() {
+        boolean doesDummyFileExist = WorldgenHandler.INSTANCE.doesDummyFileExist();
+
+        try {
+            if (!doesDummyFileExist) {
+                WorldgenHandler.INSTANCE.addRemoveVeins();
+                WorldgenHandler.INSTANCE.createDummyFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean doesDummyFileExist() {
         return Files.exists(DUMMY_FILE_PATH);
     }

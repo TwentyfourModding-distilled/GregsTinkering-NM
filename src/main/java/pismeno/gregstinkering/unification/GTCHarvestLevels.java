@@ -2,7 +2,6 @@ package pismeno.gregstinkering.unification;
 
 import net.minecraft.util.text.TextFormatting;
 import slimeknights.tconstruct.library.Util;
-import slimeknights.tconstruct.tools.TinkerMaterials;
 
 import static slimeknights.tconstruct.library.utils.HarvestLevels.harvestLevelNames;
 
