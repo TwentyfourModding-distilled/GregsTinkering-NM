@@ -1,5 +1,6 @@
 package pismeno.gregstinkering.unification;
 
+import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.material.properties.ToolProperty;
 

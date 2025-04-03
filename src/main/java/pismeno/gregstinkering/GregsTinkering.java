@@ -1,13 +1,13 @@
 package pismeno.gregstinkering;
 
 import gregtech.api.util.GTLog;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -52,18 +52,17 @@ public class GregsTinkering {
     public void init(FMLInitializationEvent event) {
         GTCTinkerMaterials.init();
         WorldgenHandler.init();
-    }
-
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        MachineRecipes.init();
-        MeltingRecipes.init();
-
         LOGGER.info("He found a new hobby: " + Tags.MODID + ":" + Tags.VERSION + "!");
     }
 
     @SubscribeEvent
     public void registerPotions(RegistryEvent.Register<Potion> event) {
         GTCTinkerTraits.init(event);
+    }
+
+    @SubscribeEvent
+    public void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+        MeltingRecipes.init();
+        MachineRecipes.init();
     }
 }

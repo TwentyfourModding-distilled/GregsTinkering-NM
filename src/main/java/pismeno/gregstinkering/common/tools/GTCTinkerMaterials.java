@@ -25,31 +25,32 @@ public final class GTCTinkerMaterials {
     public static final List<Material> BOWSTRING_MATERIALS = new ArrayList<>();
     public static final List<Material> FLETCHING_MATERIALS = new ArrayList<>();
     public static final Map<Material, Integer> TIER = new HashMap<>();
+    public static final Map<Material, gregtech.api.unification.material.Material> ASSOCIATED = new HashMap<>();
 
-    public static final Material NAQUADAH_ALLOY = registerMaterial("naquadah_alloy",TextFormatting.BLACK, VA[IV], TinkerTraits.magnetic2, TinkerTraits.magnetic);
-    public static final Material STAINLESS_STEEL = registerMaterial("stainless_steel", TextFormatting.AQUA, VA[HV],TinkerTraits.sharp, TinkerTraits.stiff);
-    public static final Material VANADIUM_STEEL = registerMaterial("vanadium_steel", TextFormatting.GRAY, VA[MV],TinkerTraits.sharp, TinkerTraits.enderference);
-    public static final Material DAMASCUS_STEEL = registerMaterial("damascus_steel", TextFormatting.DARK_GRAY, VA[LV],GTCTinkerTraits.plunderous2, GTCTinkerTraits.plunderous);
-    public static final Material TUNGSTEN_STEEL = registerMaterial("tungsten_steel", TextFormatting.DARK_BLUE, VA[EV], null, GTCTinkerTraits.piercer);
-    public static final Material RED_STEEL = registerMaterial("red_steel", TextFormatting.DARK_RED, VA[MV], GTCTinkerTraits.hungerbound2, GTCTinkerTraits.hungerbound);
-    public static final Material BLUE_STEEL = registerMaterial("blue_steel", TextFormatting.BLUE, VA[MV], TinkerTraits.freezing, TinkerTraits.aquadynamic);
-    public static final Material WROUGHT_IRON = registerMaterial("wrought_iron", TextFormatting.GRAY, VA[ULV],TinkerTraits.magnetic2, TinkerTraits.magnetic);
-    public static final Material COBALT_BRASS = registerMaterial("cobalt_brass", TextFormatting.GRAY, VA[MV],GTCTinkerTraits.resonance, TinkerTraits.lightweight);
-    public static final Material DURANIUM = registerMaterial("duranium", TextFormatting.DARK_AQUA, VA[UV],null, TinkerTraits.dense);
-    public static final Material ROSE_GOLD = registerMaterial("rose_gold", TextFormatting.GOLD, VA[MV],null, TinkerTraits.established);
-    public static final Material POLYVINYL_CHLORIDE = registerMaterial("polyvinyl_chloride", TextFormatting.GRAY, VA[MV],null, TinkerTraits.unnatural);
-    public static final Material ALUMINIUM = registerMaterial("aluminium", TextFormatting.DARK_AQUA, VA[MV],TinkerTraits.sharp, TinkerTraits.lightweight);
-    public static final Material HSSE = registerMaterial("hss_e", TextFormatting.DARK_GREEN, VA[EV],TinkerTraits.sharp, TinkerTraits.aridiculous);
-    public static final Material INVAR = registerMaterial("invar", TextFormatting.DARK_GREEN, VA[ULV],TinkerTraits.stonebound, TinkerTraits.established);
-    public static final Material ULTIMET = registerMaterial("ultimet", TextFormatting.LIGHT_PURPLE, VA[HV],GTCTinkerTraits.airy, TinkerTraits.dense);
-    public static final Material STERLING_SILVER = registerMaterial("sterling_silver", TextFormatting.WHITE, VA[MV],GTCTinkerTraits.moonlit, TinkerTraits.holy);
-    public static final Material TUNGSTENCARBIDE = registerMaterial("tungstencarbide", TextFormatting.DARK_PURPLE, VA[EV],TinkerTraits.momentum, TinkerTraits.jagged);
-    public static final Material NEUTRONIUM = registerMaterial("neutronium", TextFormatting.WHITE, VA[ZPM],GTCTinkerTraits.unbreakable, TinkerTraits.alien);
-    public static final Material TITANIUM = registerMaterial("titanium", TextFormatting.LIGHT_PURPLE, VA[HV],GTCTinkerTraits.boneshatter, GTCTinkerTraits.piercer);
+    public static final Material NAQUADAH_ALLOY = registerMaterial("naquadah_alloy", Materials.NaquadahAlloy,TextFormatting.BLACK, VA[IV], TinkerTraits.magnetic2, TinkerTraits.magnetic);
+    public static final Material STAINLESS_STEEL = registerMaterial("stainless_steel", Materials.StainlessSteel, TextFormatting.AQUA, VA[HV],TinkerTraits.sharp, TinkerTraits.stiff);
+    public static final Material VANADIUM_STEEL = registerMaterial("vanadium_steel", Materials.VanadiumSteel, TextFormatting.GRAY, VA[MV],TinkerTraits.sharp, TinkerTraits.enderference);
+    public static final Material DAMASCUS_STEEL = registerMaterial("damascus_steel", Materials.DamascusSteel, TextFormatting.DARK_GRAY, VA[LV],GTCTinkerTraits.plunderous2, GTCTinkerTraits.plunderous);
+    public static final Material TUNGSTEN_STEEL = registerMaterial("tungsten_steel", Materials.TungstenSteel, TextFormatting.DARK_BLUE, VA[EV], null, GTCTinkerTraits.piercer);
+    public static final Material RED_STEEL = registerMaterial("red_steel", Materials.RedSteel, TextFormatting.DARK_RED, VA[MV], GTCTinkerTraits.hungerbound2, GTCTinkerTraits.hungerbound);
+    public static final Material BLUE_STEEL = registerMaterial("blue_steel", Materials.BlueSteel, TextFormatting.BLUE, VA[MV], TinkerTraits.freezing, TinkerTraits.aquadynamic);
+    public static final Material WROUGHT_IRON = registerMaterial("wrought_iron", Materials.WroughtIron, TextFormatting.GRAY, VA[ULV],TinkerTraits.magnetic2, TinkerTraits.magnetic);
+    public static final Material COBALT_BRASS = registerMaterial("cobalt_brass", Materials.CobaltBrass, TextFormatting.GRAY, VA[MV],GTCTinkerTraits.resonance, TinkerTraits.lightweight);
+    public static final Material DURANIUM = registerMaterial("duranium", Materials.Duranium, TextFormatting.DARK_AQUA, VA[UV],null, TinkerTraits.dense);
+    public static final Material ROSE_GOLD = registerMaterial("rose_gold", Materials.RoseGold, TextFormatting.GOLD, VA[MV],null, TinkerTraits.established);
+    public static final Material POLYVINYL_CHLORIDE = registerMaterial("polyvinyl_chloride", Materials.PolyvinylChloride, TextFormatting.GRAY, VA[MV],null, TinkerTraits.unnatural);
+    public static final Material ALUMINIUM = registerMaterial("aluminium", Materials.Aluminium, TextFormatting.DARK_AQUA, VA[MV],TinkerTraits.sharp, TinkerTraits.lightweight);
+    public static final Material HSSE = registerMaterial("hss_e", Materials.HSSE, TextFormatting.DARK_GREEN, VA[EV],TinkerTraits.sharp, TinkerTraits.aridiculous);
+    public static final Material INVAR = registerMaterial("invar", Materials.Invar, TextFormatting.DARK_GREEN, VA[ULV],TinkerTraits.stonebound, TinkerTraits.established);
+    public static final Material ULTIMET = registerMaterial("ultimet", Materials.Ultimet, TextFormatting.LIGHT_PURPLE, VA[HV],GTCTinkerTraits.airy, TinkerTraits.dense);
+    public static final Material STERLING_SILVER = registerMaterial("sterling_silver", Materials.SterlingSilver, TextFormatting.WHITE, VA[MV],GTCTinkerTraits.moonlit, TinkerTraits.holy);
+    public static final Material TUNGSTENCARBIDE = registerMaterial("tungstencarbide", Materials.TungstenCarbide, TextFormatting.DARK_PURPLE, VA[EV],TinkerTraits.momentum, TinkerTraits.jagged);
+    public static final Material NEUTRONIUM = registerMaterial("neutronium", Materials.Neutronium, TextFormatting.WHITE, VA[ZPM],GTCTinkerTraits.unbreakable, TinkerTraits.alien);
+    public static final Material TITANIUM = registerMaterial("titanium", Materials.Titanium, TextFormatting.LIGHT_PURPLE, VA[HV],GTCTinkerTraits.boneshatter, GTCTinkerTraits.piercer);
 
-    public static final Material POLYETHYLENE = registerBowstringMaterial("polyethylene", TextFormatting.GRAY, VA[MV]);
-    public static final Material RUBBER = registerBowstringMaterial("rubber", TextFormatting.BLACK, VA[ULV]);
-    public static final Material SYNTHETIC_RUBBER = registerBowstringMaterial("synthetic_rubber", TextFormatting.DARK_GRAY, VA[HV]);
+    public static final Material POLYETHYLENE = registerBowstringMaterial("polyethylene", Materials.Polyethylene, TextFormatting.GRAY, VA[MV]);
+    public static final Material RUBBER = registerBowstringMaterial("rubber", Materials.Rubber, TextFormatting.BLACK, VA[ULV]);
+    public static final Material SYNTHETIC_RUBBER = registerBowstringMaterial("synthetic_rubber", Materials.StyreneButadieneRubber, TextFormatting.DARK_GRAY, VA[HV]);
 
     private static void setStats() {
         DURANIUM.addTrait(TinkerTraits.magnetic2);
@@ -245,29 +246,29 @@ public final class GTCTinkerMaterials {
     }
 
     private static void setRepresentativesAll() {
-        setRepresentatives("NaquadahAlloy", NAQUADAH_ALLOY, Materials.NaquadahAlloy, false);
-        setRepresentatives("StainlessSteel", STAINLESS_STEEL, Materials.StainlessSteel, false);
-        setRepresentatives("VanadiumSteel", VANADIUM_STEEL, Materials.VanadiumSteel, false);
-        setRepresentatives("DamascusSteel", DAMASCUS_STEEL, Materials.DamascusSteel, false);
-        setRepresentatives("TungstenSteel", TUNGSTEN_STEEL, Materials.TungstenSteel, false);
-        setRepresentatives("RedSteel", RED_STEEL, Materials.RedSteel, false);
-        setRepresentatives("BlueSteel", BLUE_STEEL, Materials.BlueSteel, false);
-        setRepresentatives("WroughtIron", WROUGHT_IRON, Materials.WroughtIron, false);
-        setRepresentatives("CobaltBrass", COBALT_BRASS, Materials.CobaltBrass, false);
-        setRepresentatives("Duranium", DURANIUM, Materials.Duranium, false);
-        setRepresentatives("RoseGold", ROSE_GOLD, Materials.RoseGold, false);
-        setRepresentatives("PolyvinylChloride", POLYVINYL_CHLORIDE, Materials.PolyvinylChloride, false);
-        setRepresentatives("Aluminium", ALUMINIUM, Materials.Aluminium, false);
-        setRepresentatives("Hsse", HSSE, Materials.HSSE, false);
-        setRepresentatives("Invar", INVAR, Materials.Invar, false);
-        setRepresentatives("Ultimet", ULTIMET, Materials.Ultimet, false);
-        setRepresentatives("SterlingSilver", STERLING_SILVER, Materials.SterlingSilver, false);
-        setRepresentatives("TungstenCarbide", TUNGSTENCARBIDE, Materials.TungstenCarbide, false);
-        setRepresentatives("Neutronium", NEUTRONIUM, Materials.Neutronium, false);
-        setRepresentatives("Titanium", TITANIUM, Materials.Titanium, false);
-        setRepresentatives("Plastic", POLYETHYLENE, Materials.Polyethylene, true);
-        setRepresentatives("Rubber", RUBBER, Materials.Rubber, true);
-        setRepresentatives("Rubber", SYNTHETIC_RUBBER, Materials.StyreneButadieneRubber, true);
+        setRepresentatives("NaquadahAlloy", NAQUADAH_ALLOY, false);
+        setRepresentatives("StainlessSteel", STAINLESS_STEEL, false);
+        setRepresentatives("VanadiumSteel", VANADIUM_STEEL, false);
+        setRepresentatives("DamascusSteel", DAMASCUS_STEEL, false);
+        setRepresentatives("TungstenSteel", TUNGSTEN_STEEL, false);
+        setRepresentatives("RedSteel", RED_STEEL, false);
+        setRepresentatives("BlueSteel", BLUE_STEEL, false);
+        setRepresentatives("WroughtIron", WROUGHT_IRON, false);
+        setRepresentatives("CobaltBrass", COBALT_BRASS, false);
+        setRepresentatives("Duranium", DURANIUM, false);
+        setRepresentatives("RoseGold", ROSE_GOLD, false);
+        setRepresentatives("PolyvinylChloride", POLYVINYL_CHLORIDE, false);
+        setRepresentatives("Aluminium", ALUMINIUM, false);
+        setRepresentatives("Hsse", HSSE, false);
+        setRepresentatives("Invar", INVAR, false);
+        setRepresentatives("Ultimet", ULTIMET, false);
+        setRepresentatives("SterlingSilver", STERLING_SILVER, false);
+        setRepresentatives("TungstenCarbide", TUNGSTENCARBIDE, false);
+        setRepresentatives("Neutronium", NEUTRONIUM, false);
+        setRepresentatives("Titanium", TITANIUM, false);
+        setRepresentatives("Plastic", POLYETHYLENE, true);
+        setRepresentatives("Rubber", RUBBER, true);
+        setRepresentatives("StyreneButadieneRubber", SYNTHETIC_RUBBER, true);
     }
 
     public static void preInit() {
@@ -291,25 +292,30 @@ public final class GTCTinkerMaterials {
         material.setCastable(false);
     }
 
-    private static Material registerMaterial(String name, TextFormatting color, int tier, ITrait traitHead, ITrait traitOther) {
-        Material material = new Material(name, color);
+    private static Material registerMaterial(String name, gregtech.api.unification.material.Material gtMaterial, TextFormatting color, int tier, ITrait traitHead, ITrait traitOther) {
+        Material tcMaterial = new Material(name, color);
 
-        if (traitHead != null) material.addTrait(traitHead, "head");
-        if (traitOther != null) material.addTrait(traitOther);
-        MATERIALS.add(material);
-        TIER.put(material, tier);
-        return material;
+        if (traitHead != null) tcMaterial.addTrait(traitHead, "head");
+        if (traitOther != null) tcMaterial.addTrait(traitOther);
+        MATERIALS.add(tcMaterial);
+        TIER.put(tcMaterial, tier);
+        ASSOCIATED.put(tcMaterial, gtMaterial);
+
+        return tcMaterial;
     }
 
-    private static Material registerBowstringMaterial(String name, TextFormatting color, int tier) {
-        Material material = new Material(name, color);
+    private static Material registerBowstringMaterial(String name, gregtech.api.unification.material.Material gtMaterial, TextFormatting color, int tier) {
+        Material tcMaterial = new Material(name, color);
 
-        BOWSTRING_MATERIALS.add(material);
-        TIER.put(material, tier);
-        return material;
+        BOWSTRING_MATERIALS.add(tcMaterial);
+        TIER.put(tcMaterial, tier);
+        ASSOCIATED.put(tcMaterial, gtMaterial);
+
+        return tcMaterial;
     }
+ private static void setRepresentatives(String oreDictSuffix, Material tcMaterial, boolean isBowstring) {
+     gregtech.api.unification.material.Material gtMaterial = ASSOCIATED.get(tcMaterial);
 
-    private static void setRepresentatives(String oreDictSuffix, Material tcMaterial, gregtech.api.unification.material.Material gtMaterial, boolean isBowstring) {
         tcMaterial.addCommonItems(oreDictSuffix);
         if (isBowstring) {
             tcMaterial.addItem("foil" + oreDictSuffix);

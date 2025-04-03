@@ -27,19 +27,20 @@ public final class GTCGregtechMaterials {
     public static Material Manyullyn;
     public static Material PigIron;
 
-    private static Map<Material, OrePrefix[]> ignoredItems = new HashMap<>();
+    private static final Map<Material, OrePrefix[]> ignoredItems = new HashMap<>();
 
     public static void init() {
+
         Ardite = new Material.Builder(24000, new ResourceLocation(Tags.MODID,"ardite"))
                 .ingot(3)
                 .liquid(new FluidBuilder())
                 .ore()
                 .color(0xD34117).iconSet(METALLIC)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_BOLT_SCREW,
-                        EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_BOLT_SCREW, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
                 .element(Ad)
                 .toolStats(ToolProperty.Builder.of(0.5F, 0.6F, 1810, 4).build())
                 .build();
+
 
         Manyullyn = new Material.Builder(24001, new ResourceLocation(Tags.MODID,"manyullyn"))
                 .ingot(3)
