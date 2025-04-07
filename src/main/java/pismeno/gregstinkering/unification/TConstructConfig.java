@@ -1,6 +1,6 @@
 package pismeno.gregstinkering.unification;
 
-import static pismeno.gregstinkering.unification.Config.*;
+import static pismeno.gregstinkering.Config.*;
 import static slimeknights.tconstruct.common.config.Config.*;
 
 public class TConstructConfig {

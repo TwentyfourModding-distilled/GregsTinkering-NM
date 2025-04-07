@@ -52,6 +52,7 @@ metaitem.shape.extruder.toughtoolrod.tooltip=Extruder Shape for making Tough Too
 metaitem.shape.extruder.wideguard.name=Extruder Shape (Wideguard)
 metaitem.shape.extruder.wideguard.tooltip=Extruder Shape for making Wideguards
 
+material.treated_wood.name=Treated Wood
 material.naquadah_alloy.name=Naquadah Alloy
 material.stainless_steel.name=Stainless Steel
 material.damascus_steel.name=Damascus Steel

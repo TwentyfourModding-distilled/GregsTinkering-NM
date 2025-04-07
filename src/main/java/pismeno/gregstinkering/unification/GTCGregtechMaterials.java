@@ -21,7 +21,7 @@ public final class GTCGregtechMaterials {
 
     private GTCGregtechMaterials() {}
 
-    public static final Element Ad = add(120, 180, 3600, null, "Ardite", "Ad", false);
+    public static final Element Ad = add(6, 9, -1, null, "Ardite", "Ad", false);
 
     public static Material Ardite;
     public static Material Manyullyn;

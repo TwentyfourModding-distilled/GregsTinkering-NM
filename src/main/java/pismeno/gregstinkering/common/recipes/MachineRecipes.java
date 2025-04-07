@@ -11,12 +11,15 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import pismeno.gregstinkering.Config;
 import pismeno.gregstinkering.unification.GTCMetaItem;
 import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.tools.TinkerMaterials;
 import slimeknights.tconstruct.tools.TinkerTools;
 
 import java.util.Iterator;
 
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static pismeno.gregstinkering.common.tools.GTCTinkerMaterials.*;
 import static pismeno.gregstinkering.unification.GTCGregtechMaterials.*;
@@ -33,35 +36,40 @@ public class MachineRecipes {
     private MachineRecipes() {}
 
     private static void initToolParts() {
-        /*buildToolPartRecipes(TinkerMaterials.bronze, VA[ULV]);
-        buildToolPartRecipes(TinkerMaterials.iron, VA[ULV]);
-        buildToolPartRecipes(TinkerMaterials.pigiron, VA[ULV]);
-        buildToolPartRecipes(TinkerMaterials.copper, VA[ULV]);
-        buildToolPartRecipes(TinkerMaterials.lead, VA[ULV]);
-        buildToolPartRecipes(TinkerMaterials.steel, VA[LV]);
-        buildToolPartRecipes(TinkerMaterials.cobalt, VA[LV]);
+        if (Config.addMachineRecipesForTCMaterials){
+            buildToolPartRecipes(TinkerMaterials.bronze, Bronze, VA[ULV]);
+            buildToolPartRecipes(TinkerMaterials.iron, Iron, VA[ULV]);
+            buildToolPartRecipes(TinkerMaterials.pigiron, PigIron, VA[ULV]);
+            buildToolPartRecipes(TinkerMaterials.copper, Copper, VA[ULV]);
+            buildToolPartRecipes(TinkerMaterials.lead, Lead, VA[ULV]);
+            buildToolPartRecipes(TinkerMaterials.steel, Steel, VA[LV]);
+            buildToolPartRecipes(TinkerMaterials.cobalt, Cobalt, VA[LV]);
+            buildToolPartRecipes(TinkerMaterials.ardite, Ardite, VA[LV]);
 
-        buildExtractorRecipes(TinkerMaterials.bronze, VA[ULV]);
-        buildExtractorRecipes(TinkerMaterials.iron, VA[ULV]);
-        buildExtractorRecipes(TinkerMaterials.copper, VA[ULV]);
-        buildExtractorRecipes(TinkerMaterials.lead, VA[ULV]);
-        buildExtractorRecipes(TinkerMaterials.steel, VA[LV]);
-        buildExtractorRecipes(TinkerMaterials.cobalt, VA[LV]);*/
+            buildExtractorRecipes(TinkerMaterials.bronze, Bronze, VA[ULV]);
+            buildExtractorRecipes(TinkerMaterials.iron, Iron, VA[ULV]);
+            buildExtractorRecipes(TinkerMaterials.pigiron, PigIron, VA[ULV]);
+            buildExtractorRecipes(TinkerMaterials.copper, Copper, VA[ULV]);
+            buildExtractorRecipes(TinkerMaterials.lead, Lead, VA[LV]);
+            buildExtractorRecipes(TinkerMaterials.steel, Steel, VA[LV]);
+            buildExtractorRecipes(TinkerMaterials.cobalt, Cobalt, VA[LV]);
+            buildExtractorRecipes(TinkerMaterials.ardite, Ardite, VA[LV]);
+        }
 
-        Iterator materials = MATERIALS.iterator();
+        Iterator<Material> materials = MATERIALS.iterator();
 
         while (materials.hasNext()) {
-            Material material = (Material) materials.next();
+            Material material = materials.next();
             buildToolPartRecipes(material, ASSOCIATED.get(material), TIER.get(material));
             buildExtractorRecipes(material, ASSOCIATED.get(material), TIER.get(material));
         }
     }
 
     private static void initBowstrings() {
-        Iterator materials = BOWSTRING_MATERIALS.iterator();
+        Iterator<Material> materials = BOWSTRING_MATERIALS.iterator();
 
         while (materials.hasNext()) {
-            Material material = (Material) materials.next();
+            Material material = materials.next();
             buildBowstringRecipes(material, ASSOCIATED.get(material), TIER.get(material));
         }
     }
@@ -483,28 +491,28 @@ public class MachineRecipes {
 
     private static void buildBowstringRecipes(Material material, gregtech.api.unification.material.Material gtMaterial, int eut) {
         RecipeMaps.WIREMILL_RECIPES.recipeBuilder()
-                .inputs(OreDictUnifier.get(OrePrefix.foil, gtMaterial, 2))
+                .inputs(OreDictUnifier.get(OrePrefix.foil, gtMaterial, 4))
                 .outputs(TinkerTools.bowString.getItemstackWithMaterial(material))
                 .circuitMeta(7)
                 .duration(400).EUt(eut).buildAndRegister();
 
         RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder()
                 .inputs(TinkerTools.bowString.getItemstackWithMaterial(material))
-                .fluidOutputs(new FluidStack(gtMaterial.getFluid(), 8 * 144))
+                .fluidOutputs(new FluidStack(gtMaterial.getFluid(), 4 * 36))
                 .category(RecipeCategories.EXTRACTOR_RECYCLING)
                 .duration(40 * 2).EUt(eut).buildAndRegister();
     }
 
     private static void buildFletchingRecipes(Material material, gregtech.api.unification.material.Material gtMaterial, int eut) {
         RecipeMaps.BENDER_RECIPES.recipeBuilder()
-                .inputs(OreDictUnifier.get(OrePrefix.foil, gtMaterial, 6))
+                .inputs(OreDictUnifier.get(OrePrefix.foil, gtMaterial, 8))
                 .outputs(TinkerTools.fletching.getItemstackWithMaterial(material))
                 .circuitMeta(7)
                 .duration(400).EUt(eut).buildAndRegister();
 
         RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder()
                 .inputs(TinkerTools.fletching.getItemstackWithMaterial(material))
-                .fluidOutputs(new FluidStack(gtMaterial.getFluid(), 4 * 144))
+                .fluidOutputs(new FluidStack(gtMaterial.getFluid(), 8 * 36))
                 .category(RecipeCategories.EXTRACTOR_RECYCLING)
                 .duration(40 * 2).EUt(eut).buildAndRegister();
     }
