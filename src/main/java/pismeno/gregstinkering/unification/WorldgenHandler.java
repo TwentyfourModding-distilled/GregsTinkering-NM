@@ -87,8 +87,6 @@ public class WorldgenHandler {
         GregsTinkering.LOGGER.info("Vein Size Before Addition: " + WorldGenRegistry.getOreDeposits().size());
         GregsTinkering.LOGGER.info("Fluid Vein Size Before Addition: " + WorldGenRegistry.getBedrockVeinDeposits().size());
 
-        this.removeAllVeins(worldgenRootPath);
-
         setPathAndExtractDefinitions();
 
         try {
@@ -116,15 +114,6 @@ public class WorldgenHandler {
                 .forEach(vein -> WorldGenRegistry.INSTANCE.addVeinDefinitions(new BedrockFluidDepositDefinition(vein)));
     }
 
-    public void removeAllVeins(Path worldgenRootPath) {
-        DIMENSIONS.forEach(dimension -> {
-            try {
-                FileUtils.forceDelete(new File(worldgenRootPath.resolve("vein").resolve(dimension).toUri()));
-            } catch (IOException e) {
-                GregsTinkering.LOGGER.info("Directory {} already removed", dimension);
-            }
-        });
-    }
 
     private static void setPathAndExtractDefinitions() {
         FileSystem zipFileSystem = null;
