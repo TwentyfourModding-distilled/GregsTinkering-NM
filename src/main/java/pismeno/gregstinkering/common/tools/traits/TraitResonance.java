@@ -15,7 +15,7 @@ public class TraitResonance extends AbstractTrait {
     public static final TinkerPotion Resonance = new TinkerPotion(Util.getResource("resonance"), false, false);
     public static final TinkerPotion ResonanceTime = new TinkerPotion(Util.getResource("resonance_time"), false, false);
 
-    public TraitResonance() {super("resonance", TextFormatting.YELLOW);}
+    public TraitResonance() {super("gtcresonance", TextFormatting.YELLOW);}
 
     public void miningSpeed(ItemStack tool, PlayerEvent.BreakSpeed event) {
         float boost = Resonance.getLevel(event.getEntityPlayer());
