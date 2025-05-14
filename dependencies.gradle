@@ -38,8 +38,10 @@
  * For more details, see https://docs.gradle.org/8.4/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
-    implementation("gregtech:gregtech:2.8.10-beta")
-    implementation("codechicken:codechickenlib:3.2.3.358-beta")
+    implementation files("libs/gregtech-1.12.2-2.9.0-beta-dev.jar")
+    implementation("com.cleanroommc:modularui:2.5.0-rc4") { transitive = false }
+    implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848")
+    implementation rfg.deobf(files("libs/groovyscript-1.2.4.jar"))
     implementation "curse.maven:tinkers-construct-74072:2902483"
     implementation "curse.maven:mantle-74924:2713386"
 }

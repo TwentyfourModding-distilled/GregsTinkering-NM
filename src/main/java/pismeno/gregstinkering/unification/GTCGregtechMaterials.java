@@ -3,6 +3,7 @@ package pismeno.gregstinkering.unification;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.Element;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.MaterialToolProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 import gregtech.api.unification.ore.OrePrefix;
 import net.minecraft.util.ResourceLocation;
@@ -38,7 +39,7 @@ public final class GTCGregtechMaterials {
                 .color(0xD34117).iconSet(METALLIC)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_BOLT_SCREW, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
                 .element(Ad)
-                .toolStats(ToolProperty.Builder.of(0.5F, 0.6F, 1810, 4).build())
+                .toolStats(new MaterialToolProperty(0.5F, 0.6F, 1810, 4))
                 .build();
 
 
@@ -49,7 +50,7 @@ public final class GTCGregtechMaterials {
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_BOLT_SCREW,
                         EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
                 .components(Cobalt, 1, Ardite, 1)
-                .toolStats(ToolProperty.Builder.of(4.02F, 5.72F, 700, 4).build())
+                .toolStats(new MaterialToolProperty(4.02F, 5.72F, 700, 4))
                 .build();
 
         PigIron = new Material.Builder(24002, new ResourceLocation(Tags.MODID,"pigiron"))
@@ -59,7 +60,7 @@ public final class GTCGregtechMaterials {
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_BOLT_SCREW,
                         EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, EXCLUDE_PLATE_COMPRESSOR_RECIPE)
                 .components(Hydrogen, 72, Oxygen, 63, Aluminium, 18, Silicon, 18, Iron, 5)
-                .toolStats(ToolProperty.Builder.of(1.0F, 1.5F, 430, 2).build())
+                .toolStats(new MaterialToolProperty(1.0F, 1.5F, 430, 2))
                 .build();
 
         ignoredItems.put(Ardite, new OrePrefix[]{ingot, block, nugget});
